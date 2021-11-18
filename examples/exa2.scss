@@ -1,0 +1,61 @@
+@use "../funciones" as func;
+
+@include func.generar-estados ("texto-negro", ("normal", "hover", "active", "focus")){
+    color: #000;
+}
+
+$porcentajes: (
+    "100":  100%,
+    "75":  75%,
+    "50":  50%,
+    "25":  25%
+);
+
+@include func.generar-clases("anchura", $porcentajes, [("normal")]){
+    width: func.$variableGlobal;
+    height: auto;
+}
+
+@include func.generar-clases("altura", $porcentajes, ("normal", "hover", "active", "focus")){
+    height: func.$variableGlobal;
+    width: auto;
+}
+
+$colores-1: (
+    #56BC75,
+    #4BA566, 
+    #418D58,
+    #367649
+);
+
+$colores-2: (
+    "100": #CE3E58,
+    "300": #B4364D, 
+    "600": #9B2F42,
+    "900": #812737
+);
+
+.porcentaje-1{
+    background-color: linear-gradient(func.degradado($colores-1));
+}
+
+.porcentaje-2{
+    background-color: linear-gradient(func.degradado($colores-2));
+}
+
+.porcentaje-3{
+    background-color: linear-gradient(func.degradado($colores-1, (50%, 20%)));
+}
+
+.porcentaje-4{
+    background-color: linear-gradient(func.degradado($colores-2, (50%, 20%)));
+}
+
+.porcentaje-5{
+    background-color: linear-gradient(func.degradado($colores-1, (50%, 20%, 20%, 10%)));
+}
+
+.porcentaje-6{
+    background-color: linear-gradient(func.degradado($colores-2, (50%, 20%, 20%, 10%)));
+}
+

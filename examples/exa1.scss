@@ -73,7 +73,7 @@ $porcentajes: (
     "1-12":  8.333333%,
 );
 
-$modos: ("normal", "hover", "focus", "active", "dasda");
+$modos: ("normal", "hover", "focus", "active");
 
 //Color Fondo
 @mixin bg ($color) {
