@@ -2,6 +2,72 @@
 
 Funciones para generar clases predeterminadas y código CSS de forma rápida, anteriormente integrada en [CV_GEN](https://github.com/LuisPFdez/CV_GEN). Más información sobre el lenguaje en la página oficial.
 
+## Librería
+**Las dependencias del paquete son únicamente de desarrollo**. Para poder compilar los ejemplos, de normal no serán necesarias
+
+El archivo *Funciones.scss* no necesita compilarse, no tiene código css, solo utilidades validas para scss. 
+
+Para usar la librería, es posible copiar el fichero [*Funciones.scss*](./Funciones.scss ), o clonar el repositorio, con `git clone https://github.com/LuisPFdez/Funciones-SCSS`.
+
+### Copiar librería
+Si se copia el archivo, para usarlo en otro archivo scss, bastará con la regla [use](https://sass-lang.com/documentation/at-rules/use) seguido de la ruta relativa al archivo.
+```SCSS
+//Estando la librería  en el mismo fichero
+@use "Funciones"
+
+*{
+  /*Código*/
+}
+```
+
+### NPM 
+Tras clonar el repositorio, npm ofrece un método para añadir librerías con `npm link`.
+
+Dentro de la carpeta donde se ha clonado el repositorio, ejecuta **npm link**. Esto creara un link simbólico en la carpeta global de npm ( solo es necesario hacerlo una vez )
+
+Luego, dentro de las carpetas donde se quiere usar, ejecuta **npm link nombre_paquete**. El nombre del paquete viene dado por el **name** dentro de el [package.json](./package.json) en este caso **funciones**
+
+Es posible hacerlo todo en un paso, ejecutando `npm link /ruta/relativa/o/absoluta`. La ruta puede ser relativa o absoluta a la carpeta de la librería
+
+```BASH
+# Cambia a la carpeta home
+cd ~
+# Clona el repositorio
+git clone https://github.com/LuisPFdez/Funciones-SCSS
+
+# ---Primera forma---
+# Mueve a la carpeta
+cd Funciones-SCSS
+# Ejecuta el primer comando
+npm link
+# Carpeta que necesitará la librería
+cd ../otraCarpeta
+# Ejecuta el segundo comando
+npm link funciones
+
+# ---Otra forma mas directa---
+# Carpeta que necesitará la librería
+cd ../otraCarpeta
+# Ejecuta el segundo comando
+npm link ../Funciones-SCSS
+```
+
+Para usar la funcion es necesario establecer la ruta en el comando de scss, con --load-path, (es recomendable establacer node_modules para permitir otras librerias)
+
+```BASH
+sass --no-source-map src/public/style.scss:dist/public/style.css --style compressed --load-path node_modules/
+```
+
+Y para importarlo
+```SCSS
+//
+@use "funciones/Funciones"
+
+*{
+  /*Código*/
+}
+```
+
 ## Funciones
 
 ### Tipos de funciones
