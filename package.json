@@ -1,0 +1,23 @@
+{
+  "name": "funciones",
+  "version": "1.0.0",
+  "description": "Funciones para generar clases predeterminadas y código CSS de forma rápida",
+  "main": "Funciones.scss",
+  "scripts": {
+    "build": "sass --no-source-map examples/:build/ --style compressed",
+    "build:dev": "sass examples/:build/ --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisPFdez/Funciones-SCSS.git"
+  },
+  "author": "Luis Puente Fernández",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisPFdez/Funciones-SCSS/issues"
+  },
+  "homepage": "https://github.com/LuisPFdez/Funciones-SCSS#readme",
+  "devDependencies": {
+    "sass": "^1.43.4"
+  }
+}

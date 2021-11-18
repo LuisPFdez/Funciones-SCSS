@@ -1,4 +1,4 @@
-@use "../funciones" as func;
+@use "../Funciones" as func;
 
 @include func.generar-estados ("texto-negro", ("normal", "hover", "active", "focus")){
     color: #000;
