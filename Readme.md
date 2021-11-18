@@ -45,14 +45,14 @@ cd ../otraCarpeta
 # Ejecuta el segundo comando
 npm link funciones
 
-# ---Otra forma mas directa---
+# ---Otra forma más directa---
 # Carpeta que necesitará la librería
 cd ../otraCarpeta
 # Ejecuta el segundo comando
 npm link ../Funciones-SCSS
 ```
 
-Para usar la funcion es necesario establecer la ruta en el comando de scss, con --load-path, (es recomendable establacer node_modules para permitir otras librerias)
+Para usar la función es necesario establecer la ruta en el comando de scss, con --load-path, (es recomendable establecer node_modules para permitir otras librerías)
 
 ```BASH
 sass --no-source-map src/public/style.scss:dist/public/style.css --style compressed --load-path node_modules/
@@ -60,7 +60,7 @@ sass --no-source-map src/public/style.scss:dist/public/style.css --style compres
 
 Y para importarlo
 ```SCSS
-//
+/*funciones, corresponde a la carpeta, esta a su vez recibe el nombre del name de package.json*/
 @use "funciones/Funciones"
 
 *{
